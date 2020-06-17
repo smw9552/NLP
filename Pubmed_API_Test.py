@@ -14,7 +14,7 @@ Keywords = []
 Pubmed_Info_URL = "https://pubmed.ncbi.nlm.nih.gov/?term=RAS%2C+Wnt%2C+e3+ligase"
 #Pubmed_Info_URL = "https://pubmed.ncbi.nlm.nih.gov/?term=ESR1%20breast%20cancer&page=50"
 
-Pubmed_Info = urlopen(Pubmed_Info_URL, None, timeout = 1000000)
+Pubmed_Info = urlopen(Pubmed_Info_URL, None, timeout=1000000)
 
 while True:
     Info_line = Pubmed_Info.readline()
