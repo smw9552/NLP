@@ -24,8 +24,6 @@ while True:
     Info_line = Pubtator_Info.readline()
     if not Info_line: break
 
-    #print(Info_line)
-
     #Abstract tokenization
     if str(Info_line).__contains__("|a|"):
 
@@ -49,10 +47,8 @@ while True:
 print("\n")
 print("\n")
 
-#for data in Abstract:
-#    print(str(data).strip())
 
-
+# 두 키워드를 포함하는 sentence 추출
 for info in Abstract:
 
     if str(info).__contains__(str("garlic").lower()) and str(info).__contains__(str("cancer").lower()):
@@ -60,24 +56,26 @@ for info in Abstract:
         #print(str(info).strip())
         Data = str(info).strip()
 
-
 print(Data)
 
 data_tokens = word_tokenize(str(Data))
-
 print(data_tokens)
+
+inter_data_token = data_tokens[int(data_tokens.index('garlic'))+1:int(data_tokens.index('cancer'))-1]
+
 
 #Tokenization 진행 후 관련된 단어를 포함하는지에 대한 여부로 두 keyword 사이의 연관성을 비교 분석
 
-"""
-print(Data.index(str("KRAS").lower()))
-print(Data.index(str("Wnt").lower()))
+key = "treatment"
 
-print(int(Data.index(str("KRAS").lower())) + int(len(str("KRAS"))))
-print(int(Data.index(str("Wnt").lower())))
+for inter_data in inter_data_token:
+    print(inter_data)
+    if str(inter_data) == str(key):
+        correlation = True
+    elif str(inter_data) == str(key):
+        correlation = False
 
-print(Data[78:95])
-"""
+print(correlation)
 
 """
 
