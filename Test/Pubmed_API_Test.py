@@ -11,7 +11,8 @@ Keywords = []
 #최초 URL 접근해서 result page 숫자 추출
 
 #Pubmed_Info_URL = "https://pubmed.ncbi.nlm.nih.gov/?term=ESR1+breast+cancer"
-Pubmed_Info_URL = "https://pubmed.ncbi.nlm.nih.gov/?term=RAS%2C+Wnt%2C+e3+ligase"
+#Pubmed_Info_URL = "https://pubmed.ncbi.nlm.nih.gov/?term=RAS%2C+Wnt%2C+e3+ligase"
+Pubmed_Info_URL = "https://pubmed.ncbi.nlm.nih.gov/?term=Allium+sativum+anticancer"
 #Pubmed_Info_URL = "https://pubmed.ncbi.nlm.nih.gov/?term=ESR1%20breast%20cancer&page=50"
 
 Pubmed_Info = urlopen(Pubmed_Info_URL, None, timeout=1000000)
@@ -62,6 +63,8 @@ for ai in range(1, page_result+1):
             print(PMID)
 
             PMID_List.append(PMID)
+
+            Final_PMID_List = sorted(list(set(PMID_List)))
 
 print(str("Extract PMID"))
 
