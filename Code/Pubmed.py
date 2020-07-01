@@ -1,7 +1,7 @@
 from urllib.request import urlopen
 import math
 
-class pubchem:
+class pubmed:
 
     def extract_PMID_by_two_keywords(self, Keywords):
 
