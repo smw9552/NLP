@@ -1,13 +1,20 @@
 from Code.Data import data
 from Code.Pubmed import pubmed
+from Code.Pubtator import pubtator
 
 DATA = data()
 PUBMED = pubmed()
+PUBTATOR = pubtator()
 
 # Space = %20, Comma = +
-Keywords = DATA.input_two_keywords(str("garlic%20extract"), str("anticancer"))
+#Keywords = DATA.input_two_keywords(str("garlic%20extract"), str("anticancer"))
 
-PMID_List = PUBMED.extract_PMID_by_two_keywords(Keywords)
+#PMID_List = PUBMED.extract_PMID_by_two_keywords(Keywords)
 
-print(PMID_List)
-print(len(PMID_List))
+Test_PMID = ["24964572", "28483577"]
+
+Titles = []
+
+Titles = PUBTATOR.get_paper_title(Test_PMID)
+
+print(Titles)
