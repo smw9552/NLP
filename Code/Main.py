@@ -14,7 +14,12 @@ PUBTATOR = pubtator()
 Test_PMID = ["24964572", "28483577"]
 
 Titles = []
+Abstract = []
 
-Titles = PUBTATOR.get_paper_title(Test_PMID)
+#Titles = PUBTATOR.get_paper_title(Test_PMID)
 
-print(Titles)
+Abstract = PUBTATOR.get_paper_abstract(Test_PMID)
+
+
+#print(Titles)
+print(Abstract)
